@@ -1,0 +1,116 @@
+.latest-match-details-bg {
+  background-color: #0f172a;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  border: 0px;
+  border-radius: 9px;
+}
+.first-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #475569;
+}
+.details-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 70%;
+}
+.competing-team-name-text {
+  font-family: 'Bree Serif';
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+}
+.competing-date {
+  font-family: 'Bree Serif';
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+}
+.competing-team-venue {
+  font-family: 'Bree Serif';
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 300;
+}
+.competing-team-result {
+  font-family: 'Bree Serif';
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 300;
+}
+.competing-team-logo {
+  height: 50px;
+  width: 50px;
+  align-self: center;
+}
+.innings-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+}
+.innings-title {
+  font-family: 'Bree Serif';
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+}
+.innings-value-text {
+  font-family: 'Bree Serif';
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 300;
+}
+@media screen and (min-width: 768px) {
+  .latest-match-details-bg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .first-container {
+    width: 64%;
+  }
+  .details-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+  }
+  .competing-team-name-text {
+    font-size: 28px;
+  }
+  .competing-date {
+    margin-top: 0px;
+    font-size: 24px;
+  }
+  .competing-team-venue {
+    margin-top: 0px;
+    font-size: 18px;
+  }
+  .competing-team-result {
+    margin-top: 0px;
+    font-size: 18px;
+  }
+  .competing-team-logo {
+    height: 240px;
+    width: 220px;
+  }
+  .innings-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .innings-title {
+    margin-top: 0px;
+    font-size: 22px;
+  }
+  .innings-value-text {
+    margin-top: 0px;
+    font-size: 16px;
+  }
+}

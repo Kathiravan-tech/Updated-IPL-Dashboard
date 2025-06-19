@@ -1,0 +1,56 @@
+.card-item-container {
+  border: 1px solid #ffffff;
+  background-color: #ffffff33;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  background-size: cover;
+}
+.team-card-image {
+  height: 40px;
+  width: 40px;
+  text-decoration: none;
+}
+.card-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 48%;
+  text-decoration: none;
+}
+.team-card-text {
+  font-family: 'Bree Serif';
+  font-size: 11px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  .card-link {
+    width: 48%;
+    height: 150px;
+  }
+  .card-item-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .team-card-image {
+    height: 140px;
+    width: 140px;
+  }
+  .team-card-text {
+    font-size: 26px;
+  }
+}
