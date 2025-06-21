@@ -69,7 +69,7 @@ class TeamMatches extends Component {
             alt="team banner"
           />
           <p className="team-matches-subtitle">Latest Matches</p>
-          <LatestMatch latestMacthDetails={latestMatchDetails} />
+          <LatestMatch latestMatchDetails={latestMatchDetails} />
           <ul className="match-card-list-container">
             {recentMatches.map(eachMatch => (
               <MatchCard eachMatch={eachMatch} key={eachMatch.id} />
