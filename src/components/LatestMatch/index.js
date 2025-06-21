@@ -1,19 +1,19 @@
 import './index.css'
 
 const LatestMatch = props => {
-  const {latestMacthDetails} = props
+  const {latestMatchDetails} = props
   const updatedMatchDetails = {
-    competingTeam: latestMacthDetails.competing_team,
-    competingTeamLogo: latestMacthDetails.competing_team_logo,
-    date: latestMacthDetails.date,
-    firstInnings: latestMacthDetails.first_innings,
-    id: latestMacthDetails.id,
-    manOfTheMatch: latestMacthDetails.man_of_the_match,
-    matchStatus: latestMacthDetails.match_status,
-    result: latestMacthDetails.result,
-    secondInnings: latestMacthDetails.second_innings,
-    umpires: latestMacthDetails.umpires,
-    venue: latestMacthDetails.venue,
+    competingTeam: latestMatchDetails.competing_team,
+    competingTeamLogo: latestMatchDetails.competing_team_logo,
+    date: latestMatchDetails.date,
+    firstInnings: latestMatchDetails.first_innings,
+    id: latestMatchDetails.id,
+    manOfTheMatch: latestMatchDetails.man_of_the_match,
+    matchStatus: latestMatchDetails.match_status,
+    result: latestMatchDetails.result,
+    secondInnings: latestMatchDetails.second_innings,
+    umpires: latestMatchDetails.umpires,
+    venue: latestMatchDetails.venue,
   }
   const {
     competingTeam,
