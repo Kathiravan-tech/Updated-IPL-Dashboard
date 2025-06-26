@@ -1,4 +1,6 @@
 import Loader from 'react-loader-spinner'
+import {PieChart, Pie, Legend, Cell, ResponsiveContainer} from 'recharts'
+import {Link} from 'react-router-dom'
 import {Component} from 'react'
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
@@ -43,12 +45,28 @@ class TeamMatches extends Component {
     })
   }
 
+  getPieChartData = recentMatches => {
+    const result = {won: 0, lost: 0, drawn: 0}
+    recentMatches.forEach(match => {
+      const status = match.match_status
+      if (status === 'Won') result.won += 1
+      else if (status === 'Lost') result.lost += 1
+      else if (status === 'Drawn') result.drawn += 1
+    })
+    return [
+      {name: 'won', value: result.won},
+      {name: 'lost', value: result.lost},
+      {name: 'drawn', value: result.drawn},
+    ]
+  }
+
   render() {
     const {latestMatchDetails, recentMatches, teamBannerUrl} = this.state
     const {teamId, isLoadingInTeamMatches} = this.state
 
     const {[teamId]: teamColor} = backgroundColorList
 
+    const pieChartData = this.getPieChartData(recentMatches)
     let bottomContainer
 
     if (isLoadingInTeamMatches === true) {
@@ -75,6 +93,36 @@ class TeamMatches extends Component {
               <MatchCard eachMatch={eachMatch} key={eachMatch.id} />
             ))}
           </ul>
+          <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie
+                cx="50%"
+                cy="50%"
+                data={pieChartData}
+                startAngle={0}
+                endAngle={360}
+                innerRadius="40%"
+                outerRadius="70%"
+                dataKey="value"
+                nameKey="name"
+              >
+                <Cell key="won" fill="#fecba6" />
+                <Cell key="lost" fill="#b3d23f" />
+                <Cell key="drawn" fill="#a44c9e" />
+              </Pie>
+              <Legend
+                iconType="circle"
+                layout="horizontal"
+                verticalAlign="bottom"
+                align="center"
+              />
+            </PieChart>
+          </ResponsiveContainer>
+          <Link to="/" className="link-style">
+            <button className="back-button" type="button">
+              Back
+            </button>
+          </Link>
         </div>
       )
     }
