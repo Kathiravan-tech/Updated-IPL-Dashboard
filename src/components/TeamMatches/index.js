@@ -67,6 +67,7 @@ class TeamMatches extends Component {
     const {[teamId]: teamColor} = backgroundColorList
 
     const pieChartData = this.getPieChartData(recentMatches)
+    console.log(pieChartData)
     let bottomContainer
 
     if (isLoadingInTeamMatches === true) {
@@ -94,7 +95,7 @@ class TeamMatches extends Component {
             ))}
           </ul>
           <ResponsiveContainer width="100%" height={300}>
-            <PieChart>
+            <PieChart data-testid="pieChart">
               <Pie
                 cx="50%"
                 cy="50%"
@@ -106,9 +107,18 @@ class TeamMatches extends Component {
                 dataKey="value"
                 nameKey="name"
               >
-                <Cell key="won" fill="#fecba6" />
-                <Cell key="lost" fill="#b3d23f" />
-                <Cell key="drawn" fill="#a44c9e" />
+                {pieChartData.map((entry, index) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={
+                      entry.name === 'won'
+                        ? '#fecba6'
+                        : entry.name === 'lost'
+                        ? '#b3d23f'
+                        : '#a44c9e'
+                    }
+                  />
+                ))}
               </Pie>
               <Legend
                 iconType="circle"
@@ -128,6 +138,11 @@ class TeamMatches extends Component {
     }
 
     return bottomContainer
+  }
+}
+
+export default TeamMatches
+
   }
 }
 
