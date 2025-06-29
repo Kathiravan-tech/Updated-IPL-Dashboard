@@ -19,7 +19,7 @@ const backgroundColorList = {
 
 class TeamMatches extends Component {
   state = {
-    latestMatchDetails: [],
+    latestMatchDetails: {},
     recentMatches: [],
     teamBannerUrl: '',
     teamId: '',
@@ -143,7 +143,3 @@ class TeamMatches extends Component {
 
 export default TeamMatches
 
-  }
-}
-
-export default TeamMatches
